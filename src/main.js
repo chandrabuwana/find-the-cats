@@ -4,7 +4,8 @@ import Vue from 'vue'
 import VueFire from 'vuefire'
 import axios from 'axios'
 import App from './App'
-import router from 'router'
+import Router from 'vue-router'
+// import VueRouter from 'vue-router'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import firebase from 'firebase'
@@ -40,7 +41,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  Router,
   template: '<App/>',
   components: { App }
 })

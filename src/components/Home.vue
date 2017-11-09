@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="home">
     <h1>Home</h1>
-    <md-card v-for="cat in latestCats" :key="cat['.key']">
+    <md-card v-for="cat in latestCats" :key="cat['id']">
       <md-card-media>
         <img src="cat.url" :alt="cat.comment">
       </md-card-media>
@@ -11,7 +11,7 @@
       </md-card-header>
 
       <md-card-actions>
-        <router-link to="'/detail/'+cat['.key']">
+        <router-link to="'/detail/'+cat['id']">
           <md-button>Details</md-button>
         </router-link>
       </md-card-actions>
@@ -27,8 +27,8 @@ export default {
     }
   },
   computed: {
-    latestCats: {
-      this.cats.reverse()
+    latestCats: function (){
+     return this.cats.reverse()
     }
   }
 }
